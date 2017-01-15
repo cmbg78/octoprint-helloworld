@@ -41,7 +41,7 @@ plugin_requires = []
 
 # Additional package data to install for this plugin. The subfolders "templates", "static" and "translations" will
 # already be installed automatically if they exist.
-plugin_additional_data = ["include"]
+plugin_additional_data = []
 
 # Any additional python packages you need to install with your plugin that are not contained in <plugin_package>.*
 plugin_additional_packages = []
@@ -57,7 +57,7 @@ plugin_ignored_packages = []
 # Example:
 #     plugin_requires = ["someDependency==dev"]
 #     additional_setup_parameters = {"dependency_links": ["https://github.com/someUser/someRepo/archive/master.zip#egg=someDependency-dev"]}
-additional_setup_parameters = {}
+additional_setup_parameters = {include_package_data=True}
 
 ########################################################################################################################
 
