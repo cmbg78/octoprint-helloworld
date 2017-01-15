@@ -10,6 +10,7 @@ import onewire
 class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
     def on_after_startup(self):
         self._logger.info("octotemp-raspi plugin loaded")
+        self._logger.info(self._settings.get(["probe-0"]))
     def get_settings_defaults(self):
         probes = onewire.getDeviceList()
         pd = {}
@@ -35,9 +36,9 @@ class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplateP
             css=["css/octotemp.css"],
             less=["less/octotemp.less"]
         )
-    def get_template_vars(self):
-        tvars = dict(probe-0=self._settings.get(["probe-0"]), probe-1=self._settings.get(["probe-1"]))
-        self._logger.info(str(tvars))
-        return tvars
+    #def get_template_vars(self):
+        #tvars = dict(probe-0=self._settings.get(["probe-0"]), probe-1=self._settings.get(["probe-1"]))
+        #self._logger.info(str(tvars))
+        #return tvars
 __plugin_name__ = "OctoTemp"
 __plugin_implementation__ = HelloWorldPlugin()
