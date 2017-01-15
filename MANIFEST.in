@@ -1,4 +1,2 @@
 include README.md
-include onewire.py
-recursive-include octoprint_helloworld *
-include include/raspi/*.py
+recursive-include octoprint_helloworld * *.py
