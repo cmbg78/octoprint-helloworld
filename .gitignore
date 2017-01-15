@@ -8,6 +8,7 @@ dist
 .DS_Store
 *.zip
 !octoprint-helloworld.zip
+!master.zip
 .editorconfig
 .vscode-uploade.json
 .vscode
