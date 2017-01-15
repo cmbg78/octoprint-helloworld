@@ -57,7 +57,7 @@ plugin_ignored_packages = []
 # Example:
 #     plugin_requires = ["someDependency==dev"]
 #     additional_setup_parameters = {"dependency_links": ["https://github.com/someUser/someRepo/archive/master.zip#egg=someDependency-dev"]}
-additional_setup_parameters = {include_package_data=True}
+additional_setup_parameters = {"include_package_data=True"}
 
 ########################################################################################################################
 
