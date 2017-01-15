@@ -11,7 +11,8 @@ class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplateP
     def on_after_startup(self):
         #self._logger.info(sys.path[len(sys.path)-2])
         probes = onewire.testPrint()
-        self._logger.info(probes[0])
+        for probe in probes:
+            self._logger.info(probe)
         #for i in sys.path:
         #    self._logger.info(i)
     def get_settings_defaults(self):
