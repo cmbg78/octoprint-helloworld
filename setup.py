@@ -57,7 +57,7 @@ plugin_ignored_packages = []
 # Example:
 #     plugin_requires = ["someDependency==dev"]
 #     additional_setup_parameters = {"dependency_links": ["https://github.com/someUser/someRepo/archive/master.zip#egg=someDependency-dev"]}
-additional_setup_parameters = {"include_package_data=True"}
+additional_setup_parameters = {}
 
 ########################################################################################################################
 
@@ -74,6 +74,7 @@ except:
 setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
 	identifier=plugin_identifier,
 	package=plugin_package,
+	include_package_data=True,
 	name=plugin_name,
 	version=plugin_version,
 	description=plugin_description,
