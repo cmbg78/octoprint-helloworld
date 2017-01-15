@@ -1,4 +1,3 @@
 include README.md
 recursive-include octoprint_helloworld *
-include octoprint_helloworld/include
-include octoprint_helloworld/include/*
+recursive-include octoprint_helloworld/include *
