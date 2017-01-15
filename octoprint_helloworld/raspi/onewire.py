@@ -1,10 +1,10 @@
 import subprocess as sub
 import sys
 
-def testPrint():
+def getDeviceList():
     try:
-        wires = sub.check_output(["ls", "/sys/bus/w1/devices"])
-        wires = wires.split('\n')
+        devices = sub.check_output(["ls", "/sys/bus/w1/devices"])
+        devices = wires.split('\n')
     except:
-        wires = "An error was encountered - do you have OneWire probes attached?  error: %s" % sys.exc_info()[0]    
-    return wires
+        devices = "An error was encountered - do you have OneWire probes attached?  error: %s" % sys.exc_info()[0]    
+    return devices
