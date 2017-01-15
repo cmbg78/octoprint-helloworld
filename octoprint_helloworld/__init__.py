@@ -5,14 +5,12 @@ import octoprint.plugin
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_helloworld', 'include', 'raspi')))
-#sys.path.append(os.path.abspath(os.path.join('..', 'include', 'raspi')))
-#sys.path.append(os.path.relpath("../include/raspi"))
-#from .include.raspi import onewire
-import onewire
+#import onewire
 
 class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
     def on_after_startup(self):
-        self._logger.info(onewire.testPrint())
+        #self._logger.info(onewire.testPrint())
+        self._logger.info(sys.path[len(sys.path)-1])
     def get_settings_defaults(self):
         return dict(url="https://en.wikipedia.org/wiki/Hello_world")
     def get_template_configs(self):

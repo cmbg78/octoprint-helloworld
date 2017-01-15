@@ -1,3 +1,6 @@
 [submodule "octoprint_helloworld/include/raspi"]
 	path = octoprint_helloworld/include/raspi
 	url = https://github.com/cmbg78/raspi
+[submodule "octoprint_helloworld/raspi"]
+	path = octoprint_helloworld/raspi
+	url = https://github.com/cmbg78/raspi
