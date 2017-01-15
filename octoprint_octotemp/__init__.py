@@ -22,7 +22,7 @@ class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplateP
                 d = {pname : probe}
                 pd.update(d)
             i = i+1
-        #self._logger.info(str(pd))
+        self._logger.info(str(pd))
         return pd
     def get_template_configs(self):
         return [
