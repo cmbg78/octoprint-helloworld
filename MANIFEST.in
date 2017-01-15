@@ -1,2 +1,2 @@
 include README.md
-recursive-include octotemp * *.py
+recursive-include octoprint_octotemp * *.py
