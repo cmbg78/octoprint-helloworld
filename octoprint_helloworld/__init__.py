@@ -5,12 +5,12 @@ import octoprint.plugin
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_helloworld', 'raspi')))
-#import onewire
+import onewire
 
 class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
     def on_after_startup(self):
-        self._logger.info(sys.path[len(sys.path)-2])
-        #self._logger.info(onewire.testPrint())
+        #self._logger.info(sys.path[len(sys.path)-2])
+        self._logger.info(onewire.testPrint())
         #for i in sys.path:
         #    self._logger.info(i)
     def get_settings_defaults(self):
