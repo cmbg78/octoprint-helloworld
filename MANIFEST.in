@@ -1,3 +1,3 @@
 include README.md
+include onewire.py
 recursive-include octoprint_helloworld *
-recursive-include octoprint_helloworld/include *
