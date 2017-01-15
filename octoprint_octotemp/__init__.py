@@ -35,5 +35,9 @@ class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplateP
             css=["css/octotemp.css"],
             less=["less/octotemp.less"]
         )
+    def get_template_vars(self):
+        tvars = dict(probe-0=self._settings.get(["probe-0"]), dict(probe-1=self._settings.get(['probe-1'])))
+        self._logger.info(str(tvars))
+        return tvars
 __plugin_name__ = "OctoTemp"
 __plugin_implementation__ = HelloWorldPlugin()
