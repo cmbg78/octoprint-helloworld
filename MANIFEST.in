@@ -1,3 +1,2 @@
 include README.md
-recursive-include octoprint_helloworld * *.py
-recursive-include octoprint_helloworld/raspi *.py
+recursive-include octoprint_helloworld *

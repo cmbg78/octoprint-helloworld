@@ -4,14 +4,14 @@ from __future__ import absolute_import
 import octoprint.plugin
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_helloworld', 'raspi')))
-#import onewire
+#sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_helloworld', 'raspi')))
+import onewire
 
 class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
     def on_after_startup(self):
-        #self._logger.info(onewire.testPrint())
-        for i in sys.path:
-            self._logger.info(i)
+        self._logger.info(onewire.testPrint())
+        #for i in sys.path:
+        #    self._logger.info(i)
     def get_settings_defaults(self):
         return dict(url="https://en.wikipedia.org/wiki/Hello_world")
     def get_template_configs(self):
