@@ -35,5 +35,5 @@ class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplateP
             css=["css/octotemp.css"],
             less=["less/octotemp.less"]
         )
-__plugin_name__ = "Hello World"
+__plugin_name__ = "OctoTemp"
 __plugin_implementation__ = HelloWorldPlugin()
