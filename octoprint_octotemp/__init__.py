@@ -4,7 +4,7 @@ from __future__ import absolute_import
 import octoprint.plugin
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_helloworld', 'raspi')))
+sys.path.append(os.path.abspath(os.path.join(sys.path[len(sys.path)-1], 'octoprint_octotemp', 'raspi')))
 import onewire
 
 class HelloWorldPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
