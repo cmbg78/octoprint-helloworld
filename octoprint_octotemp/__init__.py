@@ -7,8 +7,11 @@ import os
 import imp
 
 # import included onewire-raspi module
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), 'octoprint_octotemp', 'raspi')))
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), 'octoprint_octotemp', 'raspiutils')))
 import onewire
+
+# random debug imports
+import inspect
 
 class OctotempPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlugin,octoprint.plugin.SettingsPlugin,octoprint.plugin.AssetPlugin):
 
@@ -32,7 +35,12 @@ class OctotempPlugin(octoprint.plugin.StartupPlugin,octoprint.plugin.TemplatePlu
                 d = {pname : pdata}
                 self.probeData.update(d)
             i = i + 1
-        self._logger.info("probeData = " + str(self.probeData))
+        
+        # debug
+        self._logger.info("****BEGIN DEBUG INFO****")
+        aProbe = self.probeData[self.probeData.iterkeys().next()][0]
+        self._logger.info(aProbe + " temp = " + str(onewire.readTempF(aProbe)))
+
         return self.probeData
         
     def get_template_configs(self):
