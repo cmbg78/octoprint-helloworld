@@ -1,8 +1,13 @@
 <form class="form-horizontal">
-    <div class="control-group">
-        <label class="control-label">{{ _('PROBE-0') }}</label>
-        <div class="controls">
-            <p data-bind="html: settings.plugins.octotemp.probe-0">
-        </div>
-    </div>
+    <table>
+        <thread data-bind="if: settings.plugins.octotemp">
+            <tr><th align=left>Device ID</th><th align=left>Friendly Name</th></tr>
+        </thread>
+        <tbody data-bind="foreach: Object.keys(settings.plugins.octotemp)">
+            <tr data-bind="if: $data.match(/probe_*/i)">
+                <td data-bind="text: $parent.settings.plugins.octotemp[$data]()[0]"></td>
+                <td><input type="text" class="input-xxlarge" data-bind="value: $parent.settings.plugins.octotemp[$data]()[1]"></td>
+            </tr>
+        </tbody>
+    </table>
 </form>
